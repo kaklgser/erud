@@ -33,6 +33,7 @@ import { userPreferencesService } from '../../services/userPreferencesService';
 import { aiJobMatchingService } from '../../services/aiJobMatchingService';
 import { useAutoApply } from '../../hooks/useAutoApply';
 import { profileResumeService } from '../../services/profileResumeService';
+import { useSEO, injectJsonLd, removeJsonLd } from '../../hooks/useSEO';
 
 interface JobsPageProps {
   isAuthenticated: boolean;
@@ -49,6 +50,13 @@ export const JobsPage: React.FC<JobsPageProps> = ({
   const { user } = useAuth();
   const { isChristmasMode, colors } = useTheme();
   const [searchParams, setSearchParams] = useSearchParams();
+
+  useSEO({
+    title: 'Latest Jobs - Fresher & Experienced Openings',
+    description: 'Browse the latest job openings across top companies in India. Find fresher jobs, experienced roles, remote positions, and more. Apply directly or use AI-powered auto-apply.',
+    canonical: '/jobs',
+    ogType: 'website',
+  });
 
   const [jobs, setJobs] = useState<JobListing[]>([]);
   const [filters, setFilters] = useState<JobFilters>({});
@@ -176,10 +184,32 @@ export const JobsPage: React.FC<JobsPageProps> = ({
     setTotal(result.total);
     setHasMore(result.hasMore);
     setTotalPages(result.totalPages);
-    setTotalCompanies(result.totalCompanies); // ADD THIS LINE
+    setTotalCompanies(result.totalCompanies);
     setCurrentPage(page);
 
     setSearchParams({ page: page.toString() });
+
+    if (result.jobs.length > 0) {
+      const jobPostings = result.jobs.slice(0, 10).map((j: JobListing) => ({
+        '@type': 'JobPosting',
+        title: j.title || '',
+        description: j.description?.substring(0, 200) || '',
+        datePosted: j.posted_date || j.created_at || '',
+        hiringOrganization: {
+          '@type': 'Organization',
+          name: j.company || '',
+        },
+        jobLocation: {
+          '@type': 'Place',
+          address: j.location || 'India',
+        },
+        employmentType: j.job_type || 'FULL_TIME',
+      }));
+      injectJsonLd('jobs-structured-data', {
+        '@context': 'https://schema.org',
+        '@graph': jobPostings,
+      });
+    }
   } catch (err) {
     setError(err instanceof Error ? err.message : 'Failed to load jobs');
   } finally {

@@ -16,6 +16,7 @@ import { BlogStats } from '../blog/BlogStats';
 import { BlogFilters } from '../blog/BlogFilters';
 import { Pagination } from '../common/Pagination';
 import { Breadcrumb } from '../common/Breadcrumb';
+import { useSEO } from '../../hooks/useSEO';
 
 interface EnhancedBlogPageProps {
   isAuthenticated: boolean;
@@ -28,6 +29,12 @@ export const EnhancedBlogPage: React.FC<EnhancedBlogPageProps> = ({
 }) => {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
+
+  useSEO({
+    title: 'Blog - Career Tips, Resume Advice & Interview Guides',
+    description: 'Read expert articles on resume building, ATS optimization, interview preparation, and career growth. Stay updated with the latest job market insights.',
+    canonical: '/blog',
+  });
 
   const [posts, setPosts] = useState<BlogPostWithRelations[]>([]);
   const [categories, setCategories] = useState<BlogCategory[]>([]);

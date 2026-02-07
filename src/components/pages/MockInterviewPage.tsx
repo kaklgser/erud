@@ -10,6 +10,7 @@ import { InterviewSummaryReport } from '../interview/InterviewSummaryReport';
 import { InterviewConfig } from '../../types/interview';
 import { UserResume } from '../../types/resumeInterview';
 import { ArrowLeft, Sparkles } from 'lucide-react';
+import { useSEO } from '../../hooks/useSEO';
 
 // Animated gradient orb component
 const GradientOrb: React.FC<{ className?: string; delay?: number }> = ({ className, delay = 0 }) => (
@@ -42,6 +43,13 @@ export const MockInterviewPage: React.FC<MockInterviewPageProps> = ({
   const navigate = useNavigate();
   const { user } = useAuth();
   const { isChristmasMode, colors } = useTheme();
+
+  useSEO({
+    title: 'AI Mock Interview - Practice with AI Interviewer',
+    description: 'Practice interviews with our AI-powered mock interview system. Get real-time feedback, scoring, and improvement suggestions for technical and behavioral interviews.',
+    canonical: '/mock-interview',
+  });
+
   const [currentStage, setCurrentStage] = useState<FlowStage>('welcome');
   const [interviewConfig, setInterviewConfig] = useState<InterviewConfig | null>(null);
   const [selectedResume, setSelectedResume] = useState<UserResume | null>(null);

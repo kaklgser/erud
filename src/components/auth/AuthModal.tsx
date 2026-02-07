@@ -104,9 +104,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   };
 
   return (
-    <div 
-      className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-[100] p-3 sm:p-4" 
+    <div
+      className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-[100] p-3 sm:p-4"
       onClick={handleBackdropClick}
+      role="dialog"
+      aria-labelledby="auth-modal-title"
+      aria-modal="true"
     >
       <div className={`relative w-full max-w-[95vw] sm:max-w-md max-h-[95vh] overflow-hidden rounded-2xl border shadow-2xl flex flex-col ${
         isChristmasMode
@@ -129,6 +132,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           {/* Close button */}
           <button
             onClick={handleCloseClick}
+            aria-label="Close"
             className={`absolute top-3 right-3 sm:top-4 sm:right-4 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full transition-all duration-200 z-10 ${
               isChristmasMode
                 ? 'bg-slate-800/80 hover:bg-red-500/20 text-slate-400 hover:text-red-400 border border-slate-700/50'
@@ -149,7 +153,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             </div>
             
             {/* Title */}
-            <h1 className="text-xl sm:text-2xl font-bold text-white mb-1.5">
+            <h1 id="auth-modal-title" className="text-xl sm:text-2xl font-bold text-white mb-1.5">
               {getTitle()}
             </h1>
             <p className="text-slate-400 text-sm">

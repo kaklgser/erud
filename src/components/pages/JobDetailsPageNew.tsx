@@ -28,6 +28,7 @@ import { jobsService } from '../../services/jobsService';
 import { JobListing } from '../../types/jobs';
 import { useAuth } from '../../contexts/AuthContext';
 import { ApplicationMethodModal } from '../modals/ApplicationMethodModal';
+import { useSEO, injectJsonLd, removeJsonLd } from '../../hooks/useSEO';
 
 interface JobDetailsPageProps {
   onShowAuth: (callback?: () => void) => void;
@@ -57,6 +58,35 @@ export const JobDetailsPageNew: React.FC<JobDetailsPageProps> = ({ onShowAuth })
       .map((value) => value.trim())
       .filter((value, index, arr) => value.length > 0 && arr.indexOf(value) === index);
   }, [job?.eligible_years]);
+
+  useSEO({
+    title: job ? `${job.title} at ${job.company}` : 'Job Details',
+    description: job ? `Apply for ${job.title} at ${job.company}${job.location ? ` in ${job.location}` : ''}. ${job.description?.substring(0, 120) || ''}` : 'View job details and apply on PrimoBoost AI.',
+    canonical: jobId ? `/jobs/${jobId}` : '/jobs',
+    ogType: 'article',
+  });
+
+  useEffect(() => {
+    if (job) {
+      injectJsonLd('job-detail-structured-data', {
+        '@context': 'https://schema.org',
+        '@type': 'JobPosting',
+        title: job.title || '',
+        description: job.description || '',
+        datePosted: job.posted_date || job.created_at || '',
+        hiringOrganization: {
+          '@type': 'Organization',
+          name: job.company || '',
+        },
+        jobLocation: {
+          '@type': 'Place',
+          address: job.location || 'India',
+        },
+        employmentType: job.job_type || 'FULL_TIME',
+      });
+    }
+    return () => removeJsonLd('job-detail-structured-data');
+  }, [job]);
 
   useEffect(() => {
     const fetchJob = async () => {

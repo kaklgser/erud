@@ -15,6 +15,7 @@ import { webinarService } from '../../services/webinarService';
 import { useAuth } from '../../contexts/AuthContext';
 import { DarkPageWrapper } from '../ui';
 import type { Webinar, WebinarFilters } from '../../types/webinar';
+import { useSEO } from '../../hooks/useSEO';
 
 type WebinarsPageProps = {
   onShowAuth?: () => void;
@@ -23,6 +24,12 @@ type WebinarsPageProps = {
 export const WebinarsPage: React.FC<WebinarsPageProps> = ({ onShowAuth }) => {
   const navigate = useNavigate();
   const { user } = useAuth();
+
+  useSEO({
+    title: 'Webinars - Career Growth & Interview Preparation',
+    description: 'Join live webinars on resume building, interview preparation, career growth strategies, and more. Learn from industry experts at PrimoBoost AI.',
+    canonical: '/webinars',
+  });
 
   const [webinars, setWebinars] = useState<Webinar[]>([]);
   const [myRegistrations, setMyRegistrations] = useState<any[]>([]);

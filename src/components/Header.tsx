@@ -198,6 +198,8 @@ export const Header: React.FC<HeaderProps> = ({
               <div className="flex items-center space-x-2">
                 <button
                   onClick={onMobileMenuToggle}
+                  aria-label={showMobileMenu ? 'Close menu' : 'Open menu'}
+                  aria-expanded={showMobileMenu}
                   className="min-w-touch min-h-touch p-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800/50 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 >
                   {showMobileMenu ? (
@@ -220,12 +222,13 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Device Management Modal */}
       {showDeviceManagement && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 backdrop-blur-sm safe-area">
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 backdrop-blur-sm safe-area" role="dialog" aria-labelledby="device-mgmt-title">
           <div className="bg-slate-900 rounded-2xl shadow-2xl w-full max-w-6xl max-h-[95vh] overflow-y-auto border border-slate-700/50">
             <div className="flex items-center justify-between p-4 sm:p-6 border-b border-slate-700/50">
-              <h2 className="text-lg sm:text-xl font-semibold text-slate-100">Device & Security Management</h2>
+              <h2 id="device-mgmt-title" className="text-lg sm:text-xl font-semibold text-slate-100">Device & Security Management</h2>
               <button
                 onClick={() => setShowDeviceManagement(false)}
+                aria-label="Close device management"
                 className="min-w-touch min-h-touch w-8 h-8 flex items-center justify-center text-slate-400 hover:text-slate-200 transition-colors rounded-full hover:bg-slate-800"
               >
                 <X className="w-5 h-5" />

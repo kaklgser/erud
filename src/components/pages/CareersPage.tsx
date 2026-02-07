@@ -27,6 +27,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { careersData } from '../../data/careersData';
 import { DarkPageWrapper } from '../ui';
+import { useSEO } from '../../hooks/useSEO';
 
 interface CareersPageProps {
   isAuthenticated: boolean;
@@ -35,6 +36,12 @@ interface CareersPageProps {
 
 export const CareersPage: React.FC<CareersPageProps> = ({ isAuthenticated, onShowAuth }) => {
   const navigate = useNavigate();
+
+  useSEO({
+    title: 'Careers - Company-Wise Job Openings & Practice',
+    description: 'Explore company-wise career opportunities and practice for specific company interviews. Browse jobs from top companies with domain-specific preparation resources.',
+    canonical: '/careers',
+  });
 
   const getDomainIcon = (domain: string) => {
     switch (domain) {

@@ -52,6 +52,7 @@ interface HomePageProps {
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { authService } from '../../services/authService';
+import { useSEO } from '../../hooks/useSEO';
 
 // WhatsApp brand icon
 const WhatsappIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -126,7 +127,14 @@ export const HomePage: React.FC<HomePageProps> = ({
 }) => {
   const [showPlanDetails, setShowPlanDetails] = useState(false);
   const navigate = useNavigate();
-  useAuth(); // Keep context connection
+  useAuth();
+
+  useSEO({
+    title: 'AI-Powered Resume Optimizer | ATS-Friendly Resume Builder',
+    description: 'Transform your resume with AI-powered optimization. Get ATS-friendly resumes, job-specific tailoring, 16-parameter scoring, and professional formatting. Trusted by 50,000+ professionals.',
+    canonical: '/',
+    ogType: 'website',
+  });
   const [globalResumesCreated, setGlobalResumesCreated] = useState<number>(60070);
   const [scoreChecksCompleted, setScoreChecksCompleted] = useState<number>(500070);
   const [isChristmasMode] = useState(() => {

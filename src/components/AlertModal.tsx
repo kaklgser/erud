@@ -72,15 +72,19 @@ export const AlertModal: React.FC<AlertModalProps> = ({
   };
 
   return (
-    <div 
-      className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 backdrop-blur-sm" 
+    <div
+      className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 backdrop-blur-sm"
       onClick={handleBackdropClick}
+      role="alertdialog"
+      aria-labelledby="alert-modal-title"
+      aria-describedby="alert-modal-message"
     >
       <div className="card-surface w-full max-w-md max-h-[95vh] overflow-y-auto animate-scale-in">
         {/* Header */}
         <div className="relative p-6 border-b border-slate-700/50">
           <button
             onClick={onClose}
+            aria-label="Close alert"
             className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-200 transition-colors rounded-full hover:bg-slate-700/50"
           >
             <X className="w-5 h-5" />
@@ -90,13 +94,13 @@ export const AlertModal: React.FC<AlertModalProps> = ({
             <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 ${getIconBgClasses()}`}>
               {getIcon()}
             </div>
-            <h1 className="text-xl font-bold text-slate-100">{title}</h1>
+            <h1 id="alert-modal-title" className="text-xl font-bold text-slate-100">{title}</h1>
           </div>
         </div>
 
         {/* Content */}
         <div className="p-6 text-center">
-          <p className="text-slate-300 mb-6">{message}</p>
+          <p id="alert-modal-message" className="text-slate-300 mb-6">{message}</p>
           {actionText && onAction ? (
             <button
               onClick={() => {
