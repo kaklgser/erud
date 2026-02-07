@@ -114,7 +114,7 @@ class JobSyncService {
 
   async triggerSync(): Promise<{ success: boolean; error?: string; stats?: Record<string, unknown> }> {
     try {
-      const response = await supabase.functions.invoke('sync-jobs', {
+      const response = await supabase.functions.invoke('apify-sync-jobs', {
         body: {},
       });
 

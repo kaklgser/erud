@@ -49,7 +49,7 @@ Deno.serve(async (req: Request) => {
         last_sent_at
       `)
       .eq('is_subscribed', true)
-      .in('notification_frequency', ['daily', '8-hour']);
+      .in('notification_frequency', ['daily', 'weekly']);
 
     if (subsError) {
       throw new Error(`Failed to fetch subscriptions: ${subsError.message}`);
