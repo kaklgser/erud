@@ -142,18 +142,6 @@ export const PageSidebar: React.FC<PageSidebarProps> = () => {
         animate={{ width: isExpanded ? 232 : 64 }}
         className="fixed left-0 top-14 sm:top-16 bottom-0 z-[9999] hidden md:flex flex-col bg-[#05131A] backdrop-blur-sm border-r border-[#0c1d25] transition-[width]"
       >
-        {/* Toggle button */}
-        <div className="px-2 pt-3 flex-shrink-0">
-          <button
-            type="button"
-            onClick={() => setIsExpanded((prev) => !prev)}
-            className="w-full flex items-center justify-center gap-2 rounded-lg border border-slate-800 bg-slate-900/60 text-slate-200 p-2 hover:bg-slate-800/80 transition-colors"
-            aria-label={isExpanded ? 'Collapse sidebar' : 'Expand sidebar'}
-          >
-            {isExpanded ? <ChevronLeft className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
-          </button>
-        </div>
-
         {/* Tools Section */}
         <div className="flex-1 overflow-y-auto px-2 pt-3">
           <div className="space-y-1">
