@@ -1,0 +1,685 @@
+{
+  "version": "2.0.0",
+  "last_updated": "2025-01-21",
+  "categories": {
+    "ai_ml_llm": {
+      "name": "AI/ML/LLM Technologies",
+      "description": "Artificial Intelligence, Machine Learning, and Large Language Models"
+    },
+    "backend": {
+      "name": "Backend Development",
+      "description": "Server-side development and APIs"
+    },
+    "frontend": {
+      "name": "Frontend Development",
+      "description": "Client-side development and UI"
+    },
+    "cloud": {
+      "name": "Cloud Platforms",
+      "description": "Cloud services and infrastructure"
+    },
+    "databases": {
+      "name": "Databases",
+      "description": "Data storage and management systems"
+    },
+    "vector_dbs": {
+      "name": "Vector Databases",
+      "description": "Vector storage for embeddings and similarity search"
+    },
+    "devops": {
+      "name": "DevOps & Infrastructure",
+      "description": "Development operations and infrastructure management"
+    },
+    "web_frameworks": {
+      "name": "Web Frameworks",
+      "description": "Web application frameworks"
+    },
+    "mobile": {
+      "name": "Mobile Development",
+      "description": "Mobile application development"
+    },
+    "data_science": {
+      "name": "Data Science & Analytics",
+      "description": "Data analysis and visualization"
+    }
+  },
+  "synonym_clusters": [
+    {
+      "canonical": "langchain",
+      "synonyms": ["lang chain", "langchain framework", "langchain python", "langchain js", "langchainjs"],
+      "confidence": 0.95,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "llamaindex",
+      "synonyms": ["llama index", "gpt index", "llama-index"],
+      "confidence": 0.95,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "autogen",
+      "synonyms": ["auto gen", "microsoft autogen", "autogen framework"],
+      "confidence": 0.95,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "crewai",
+      "synonyms": ["crew ai", "crew-ai", "crewai framework"],
+      "confidence": 0.95,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "huggingface",
+      "synonyms": ["hugging face", "hf", "transformers library", "huggingface transformers"],
+      "confidence": 0.95,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "openai",
+      "synonyms": ["open ai", "openai api", "gpt api", "chatgpt api"],
+      "confidence": 0.95,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "anthropic",
+      "synonyms": ["anthropic ai", "claude api", "claude"],
+      "confidence": 0.95,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "rag",
+      "synonyms": ["retrieval augmented generation", "retrieval-augmented generation", "rag pipeline", "rag system"],
+      "confidence": 0.95,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "embeddings",
+      "synonyms": ["embedding models", "text embeddings", "vector embeddings", "semantic embeddings"],
+      "confidence": 0.90,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "fine-tuning",
+      "synonyms": ["model fine-tuning", "finetuning", "model training", "transfer learning"],
+      "confidence": 0.85,
+      "category": "ai_ml_llm",
+      "importance": "medium"
+    },
+    {
+      "canonical": "lora",
+      "synonyms": ["low-rank adaptation", "lora fine-tuning", "qlora"],
+      "confidence": 0.95,
+      "category": "ai_ml_llm",
+      "importance": "medium"
+    },
+    {
+      "canonical": "peft",
+      "synonyms": ["parameter efficient fine-tuning", "parameter-efficient fine-tuning"],
+      "confidence": 0.95,
+      "category": "ai_ml_llm",
+      "importance": "medium"
+    },
+    {
+      "canonical": "prompt engineering",
+      "synonyms": ["prompt design", "prompt optimization", "prompting"],
+      "confidence": 0.90,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "vector search",
+      "synonyms": ["similarity search", "semantic search", "nearest neighbor search", "knn search"],
+      "confidence": 0.85,
+      "category": "vector_dbs",
+      "importance": "high"
+    },
+    {
+      "canonical": "pinecone",
+      "synonyms": ["pinecone db", "pinecone database", "pinecone vector db"],
+      "confidence": 0.95,
+      "category": "vector_dbs",
+      "importance": "high"
+    },
+    {
+      "canonical": "weaviate",
+      "synonyms": ["weaviate db", "weaviate database", "weaviate vector database"],
+      "confidence": 0.95,
+      "category": "vector_dbs",
+      "importance": "high"
+    },
+    {
+      "canonical": "chromadb",
+      "synonyms": ["chroma", "chroma db", "chroma database"],
+      "confidence": 0.95,
+      "category": "vector_dbs",
+      "importance": "high"
+    },
+    {
+      "canonical": "qdrant",
+      "synonyms": ["qdrant db", "qdrant database", "qdrant vector database"],
+      "confidence": 0.95,
+      "category": "vector_dbs",
+      "importance": "high"
+    },
+    {
+      "canonical": "milvus",
+      "synonyms": ["milvus db", "milvus database", "milvus vector database"],
+      "confidence": 0.95,
+      "category": "vector_dbs",
+      "importance": "high"
+    },
+    {
+      "canonical": "faiss",
+      "synonyms": ["facebook ai similarity search", "faiss index", "faiss library"],
+      "confidence": 0.95,
+      "category": "vector_dbs",
+      "importance": "medium"
+    },
+    {
+      "canonical": "python",
+      "synonyms": ["py", "python3", "python2", "python programming", "python development"],
+      "confidence": 0.95,
+      "category": "backend",
+      "importance": "high"
+    },
+    {
+      "canonical": "javascript",
+      "synonyms": ["js", "ecmascript", "es6", "es2015", "es2020", "javascript programming"],
+      "confidence": 0.95,
+      "category": "backend",
+      "importance": "high"
+    },
+    {
+      "canonical": "typescript",
+      "synonyms": ["ts", "typescript programming", "typed javascript"],
+      "confidence": 0.95,
+      "category": "backend",
+      "importance": "high"
+    },
+    {
+      "canonical": "node.js",
+      "synonyms": ["nodejs", "node", "backend javascript", "server-side javascript", "backend development"],
+      "confidence": 0.90,
+      "category": "backend",
+      "importance": "high"
+    },
+    {
+      "canonical": "express.js",
+      "synonyms": ["express", "expressjs", "express framework", "node express"],
+      "confidence": 0.95,
+      "category": "backend",
+      "importance": "high"
+    },
+    {
+      "canonical": "fastapi",
+      "synonyms": ["fast api", "fastapi framework", "python api", "python backend"],
+      "confidence": 0.90,
+      "category": "backend",
+      "importance": "high"
+    },
+    {
+      "canonical": "django",
+      "synonyms": ["django framework", "django python", "python web framework"],
+      "confidence": 0.95,
+      "category": "backend",
+      "importance": "high"
+    },
+    {
+      "canonical": "flask",
+      "synonyms": ["flask framework", "flask python", "python microframework"],
+      "confidence": 0.95,
+      "category": "backend",
+      "importance": "high"
+    },
+    {
+      "canonical": "spring boot",
+      "synonyms": ["springboot", "spring framework", "java spring", "spring", "java backend", "enterprise java"],
+      "confidence": 0.90,
+      "category": "backend",
+      "importance": "high"
+    },
+    {
+      "canonical": "nest.js",
+      "synonyms": ["nestjs", "nest", "nest framework", "typescript backend"],
+      "confidence": 0.95,
+      "category": "backend",
+      "importance": "high"
+    },
+    {
+      "canonical": "react",
+      "synonyms": ["reactjs", "react.js", "react library", "react framework"],
+      "confidence": 0.95,
+      "category": "frontend",
+      "importance": "high"
+    },
+    {
+      "canonical": "next.js",
+      "synonyms": ["nextjs", "next", "next framework", "react framework"],
+      "confidence": 0.95,
+      "category": "frontend",
+      "importance": "high"
+    },
+    {
+      "canonical": "vue.js",
+      "synonyms": ["vue", "vuejs", "vue framework"],
+      "confidence": 0.95,
+      "category": "frontend",
+      "importance": "high"
+    },
+    {
+      "canonical": "angular",
+      "synonyms": ["angularjs", "angular.js", "angular framework"],
+      "confidence": 0.95,
+      "category": "frontend",
+      "importance": "high"
+    },
+    {
+      "canonical": "svelte",
+      "synonyms": ["svelte framework", "sveltejs"],
+      "confidence": 0.95,
+      "category": "frontend",
+      "importance": "medium"
+    },
+    {
+      "canonical": "tailwind css",
+      "synonyms": ["tailwind", "tailwindcss", "utility-first css"],
+      "confidence": 0.95,
+      "category": "frontend",
+      "importance": "medium"
+    },
+    {
+      "canonical": "aws",
+      "synonyms": ["amazon web services", "amazon aws", "aws cloud"],
+      "confidence": 0.95,
+      "category": "cloud",
+      "importance": "high"
+    },
+    {
+      "canonical": "aws lambda",
+      "synonyms": ["lambda functions", "aws serverless", "lambda"],
+      "confidence": 0.90,
+      "category": "cloud",
+      "importance": "high"
+    },
+    {
+      "canonical": "aws s3",
+      "synonyms": ["s3", "simple storage service", "aws storage"],
+      "confidence": 0.90,
+      "category": "cloud",
+      "importance": "high"
+    },
+    {
+      "canonical": "aws ec2",
+      "synonyms": ["ec2", "elastic compute cloud", "aws compute"],
+      "confidence": 0.90,
+      "category": "cloud",
+      "importance": "high"
+    },
+    {
+      "canonical": "aws rds",
+      "synonyms": ["rds", "relational database service", "aws database"],
+      "confidence": 0.90,
+      "category": "cloud",
+      "importance": "high"
+    },
+    {
+      "canonical": "aws dynamodb",
+      "synonyms": ["dynamodb", "dynamo db", "aws nosql"],
+      "confidence": 0.95,
+      "category": "cloud",
+      "importance": "high"
+    },
+    {
+      "canonical": "aws sagemaker",
+      "synonyms": ["sagemaker", "sage maker", "aws ml", "aws machine learning"],
+      "confidence": 0.95,
+      "category": "cloud",
+      "importance": "high"
+    },
+    {
+      "canonical": "azure",
+      "synonyms": ["microsoft azure", "ms azure", "azure cloud"],
+      "confidence": 0.95,
+      "category": "cloud",
+      "importance": "high"
+    },
+    {
+      "canonical": "azure functions",
+      "synonyms": ["azure serverless", "azure cloud functions"],
+      "confidence": 0.90,
+      "category": "cloud",
+      "importance": "high"
+    },
+    {
+      "canonical": "azure blob storage",
+      "synonyms": ["blob storage", "azure storage"],
+      "confidence": 0.90,
+      "category": "cloud",
+      "importance": "high"
+    },
+    {
+      "canonical": "azure cosmosdb",
+      "synonyms": ["cosmosdb", "cosmos db", "azure nosql"],
+      "confidence": 0.95,
+      "category": "cloud",
+      "importance": "high"
+    },
+    {
+      "canonical": "azure ml",
+      "synonyms": ["azure machine learning", "azure ml studio"],
+      "confidence": 0.90,
+      "category": "cloud",
+      "importance": "high"
+    },
+    {
+      "canonical": "gcp",
+      "synonyms": ["google cloud platform", "google cloud", "gcp cloud"],
+      "confidence": 0.95,
+      "category": "cloud",
+      "importance": "high"
+    },
+    {
+      "canonical": "google cloud functions",
+      "synonyms": ["cloud functions", "gcp functions", "gcp serverless"],
+      "confidence": 0.90,
+      "category": "cloud",
+      "importance": "high"
+    },
+    {
+      "canonical": "bigquery",
+      "synonyms": ["big query", "google bigquery", "gcp bigquery"],
+      "confidence": 0.95,
+      "category": "cloud",
+      "importance": "high"
+    },
+    {
+      "canonical": "vertex ai",
+      "synonyms": ["google vertex ai", "gcp ml", "gcp vertex"],
+      "confidence": 0.95,
+      "category": "cloud",
+      "importance": "high"
+    },
+    {
+      "canonical": "docker",
+      "synonyms": ["containerization", "containers", "docker containers"],
+      "confidence": 0.90,
+      "category": "devops",
+      "importance": "high"
+    },
+    {
+      "canonical": "kubernetes",
+      "synonyms": ["k8s", "k8", "container orchestration", "kube"],
+      "confidence": 0.90,
+      "category": "devops",
+      "importance": "high"
+    },
+    {
+      "canonical": "ci/cd",
+      "synonyms": ["continuous integration", "continuous deployment", "continuous delivery", "cicd", "ci cd"],
+      "confidence": 0.85,
+      "category": "devops",
+      "importance": "high"
+    },
+    {
+      "canonical": "jenkins",
+      "synonyms": ["jenkins ci", "jenkins pipeline"],
+      "confidence": 0.95,
+      "category": "devops",
+      "importance": "high"
+    },
+    {
+      "canonical": "github actions",
+      "synonyms": ["gh actions", "github ci", "github workflows"],
+      "confidence": 0.90,
+      "category": "devops",
+      "importance": "high"
+    },
+    {
+      "canonical": "terraform",
+      "synonyms": ["infrastructure as code", "iac", "terraform iac"],
+      "confidence": 0.85,
+      "category": "devops",
+      "importance": "high"
+    },
+    {
+      "canonical": "ansible",
+      "synonyms": ["configuration management", "ansible automation"],
+      "confidence": 0.90,
+      "category": "devops",
+      "importance": "medium"
+    },
+    {
+      "canonical": "postgresql",
+      "synonyms": ["postgres", "psql", "postgresql database"],
+      "confidence": 0.95,
+      "category": "databases",
+      "importance": "high"
+    },
+    {
+      "canonical": "mysql",
+      "synonyms": ["my sql", "mysql database"],
+      "confidence": 0.95,
+      "category": "databases",
+      "importance": "high"
+    },
+    {
+      "canonical": "mongodb",
+      "synonyms": ["mongo", "mongo db", "nosql", "document database"],
+      "confidence": 0.90,
+      "category": "databases",
+      "importance": "high"
+    },
+    {
+      "canonical": "redis",
+      "synonyms": ["redis cache", "in-memory database", "cache", "redis db"],
+      "confidence": 0.85,
+      "category": "databases",
+      "importance": "high"
+    },
+    {
+      "canonical": "elasticsearch",
+      "synonyms": ["elastic search", "es", "search engine"],
+      "confidence": 0.90,
+      "category": "databases",
+      "importance": "high"
+    },
+    {
+      "canonical": "sql",
+      "synonyms": ["structured query language", "database queries", "relational database"],
+      "confidence": 0.85,
+      "category": "databases",
+      "importance": "high"
+    },
+    {
+      "canonical": "nosql",
+      "synonyms": ["no sql", "non-relational database", "document database"],
+      "confidence": 0.85,
+      "category": "databases",
+      "importance": "medium"
+    },
+    {
+      "canonical": "machine learning",
+      "synonyms": ["ml", "artificial intelligence", "ai", "predictive modeling"],
+      "confidence": 0.80,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "deep learning",
+      "synonyms": ["dl", "neural networks", "deep neural networks"],
+      "confidence": 0.85,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "tensorflow",
+      "synonyms": ["tf", "tensorflow framework", "google tensorflow"],
+      "confidence": 0.95,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "pytorch",
+      "synonyms": ["torch", "pytorch framework", "facebook pytorch"],
+      "confidence": 0.95,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "scikit-learn",
+      "synonyms": ["sklearn", "scikit learn", "scikit"],
+      "confidence": 0.95,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "pandas",
+      "synonyms": ["pandas library", "python pandas", "data manipulation"],
+      "confidence": 0.90,
+      "category": "data_science",
+      "importance": "high"
+    },
+    {
+      "canonical": "numpy",
+      "synonyms": ["numpy library", "numerical python"],
+      "confidence": 0.95,
+      "category": "data_science",
+      "importance": "high"
+    },
+    {
+      "canonical": "rest api",
+      "synonyms": ["restful", "rest", "rest api", "restful api", "api development"],
+      "confidence": 0.85,
+      "category": "backend",
+      "importance": "high"
+    },
+    {
+      "canonical": "graphql",
+      "synonyms": ["graph ql", "gql", "graphql api"],
+      "confidence": 0.95,
+      "category": "backend",
+      "importance": "high"
+    },
+    {
+      "canonical": "microservices",
+      "synonyms": ["micro services", "microservice architecture", "service-oriented architecture", "soa"],
+      "confidence": 0.85,
+      "category": "backend",
+      "importance": "high"
+    },
+    {
+      "canonical": "frontend development",
+      "synonyms": ["front-end", "front end", "client-side", "ui development", "web development"],
+      "confidence": 0.80,
+      "category": "frontend",
+      "importance": "medium"
+    },
+    {
+      "canonical": "backend development",
+      "synonyms": ["back-end", "back end", "server-side", "api development", "server development"],
+      "confidence": 0.80,
+      "category": "backend",
+      "importance": "medium"
+    },
+    {
+      "canonical": "fullstack development",
+      "synonyms": ["full-stack", "full stack", "fullstack", "full stack development"],
+      "confidence": 0.90,
+      "category": "backend",
+      "importance": "medium"
+    },
+    {
+      "canonical": "git",
+      "synonyms": ["version control", "source control", "git version control"],
+      "confidence": 0.85,
+      "category": "devops",
+      "importance": "high"
+    },
+    {
+      "canonical": "agile",
+      "synonyms": ["scrum", "kanban", "agile methodology", "agile development"],
+      "confidence": 0.80,
+      "category": "devops",
+      "importance": "medium"
+    },
+    {
+      "canonical": "react native",
+      "synonyms": ["react-native", "rn", "mobile react"],
+      "confidence": 0.95,
+      "category": "mobile",
+      "importance": "high"
+    },
+    {
+      "canonical": "flutter",
+      "synonyms": ["flutter framework", "dart flutter"],
+      "confidence": 0.95,
+      "category": "mobile",
+      "importance": "high"
+    },
+    {
+      "canonical": "ios development",
+      "synonyms": ["ios", "swift", "objective-c", "apple development"],
+      "confidence": 0.85,
+      "category": "mobile",
+      "importance": "high"
+    },
+    {
+      "canonical": "android development",
+      "synonyms": ["android", "kotlin", "java android", "android studio"],
+      "confidence": 0.85,
+      "category": "mobile",
+      "importance": "high"
+    },
+    {
+      "canonical": "llm",
+      "synonyms": ["large language model", "large language models", "language models"],
+      "confidence": 0.90,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "nlp",
+      "synonyms": ["natural language processing", "text processing", "language processing"],
+      "confidence": 0.90,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "computer vision",
+      "synonyms": ["cv", "image processing", "vision ai"],
+      "confidence": 0.85,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "transformers",
+      "synonyms": ["transformer models", "transformer architecture", "attention mechanism"],
+      "confidence": 0.85,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    },
+    {
+      "canonical": "bert",
+      "synonyms": ["bidirectional encoder representations", "bert model"],
+      "confidence": 0.95,
+      "category": "ai_ml_llm",
+      "importance": "medium"
+    },
+    {
+      "canonical": "gpt",
+      "synonyms": ["generative pre-trained transformer", "gpt model"],
+      "confidence": 0.95,
+      "category": "ai_ml_llm",
+      "importance": "high"
+    }
+  ]
+}

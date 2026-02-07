@@ -1,0 +1,88 @@
+{
+  "technicalSkills": {
+    "python": ["python", "py", "python3", "django", "flask", "fastapi", "pandas", "numpy"],
+    "javascript": ["javascript", "js", "node.js", "nodejs", "typescript", "ts"],
+    "react": ["react", "react.js", "reactjs", "react native", "next.js", "nextjs"],
+    "java": ["java", "spring", "spring boot", "springboot", "hibernate", "maven"],
+    "database": ["database", "db", "sql", "postgresql", "postgres", "mysql", "mongodb", "redis"],
+    "cloud": ["cloud", "aws", "amazon web services", "azure", "gcp", "google cloud"],
+    "devops": ["devops", "ci/cd", "jenkins", "docker", "kubernetes", "k8s", "terraform"],
+    "api": ["api", "rest", "restful", "graphql", "soap", "microservices"],
+    "frontend": ["frontend", "front-end", "ui", "ux", "web development", "responsive"],
+    "backend": ["backend", "back-end", "server-side", "api development"],
+    "fullstack": ["fullstack", "full-stack", "full stack", "end-to-end"]
+  },
+  "softSkills": {
+    "leadership": ["leadership", "led", "managed", "directed", "mentored", "coached", "guided"],
+    "communication": ["communication", "presented", "documented", "articulated", "explained"],
+    "collaboration": ["collaboration", "teamwork", "cross-functional", "partnered", "coordinated"],
+    "problemSolving": ["problem-solving", "analytical", "troubleshooting", "debugging", "resolved"],
+    "adaptability": ["adaptability", "flexibility", "learning agility", "quick learner", "adapted"],
+    "timeManagement": ["time management", "prioritization", "deadline-driven", "organized"],
+    "criticalThinking": ["critical thinking", "analytical", "strategic", "decision-making"],
+    "creativity": ["creativity", "innovative", "creative solutions", "design thinking"]
+  },
+  "actionVerbs": {
+    "strong": [
+      "architected", "engineered", "spearheaded", "pioneered", "orchestrated",
+      "established", "transformed", "optimized", "streamlined", "modernized",
+      "delivered", "achieved", "increased", "reduced", "improved", "enhanced",
+      "developed", "implemented", "designed", "built", "created", "led",
+      "managed", "directed", "executed", "deployed", "launched", "scaled"
+    ],
+    "weak": [
+      "helped", "assisted", "worked on", "participated", "involved in",
+      "responsible for", "contributed to", "worked with", "supported"
+    ]
+  },
+  "domains": {
+    "fintech": ["fintech", "financial", "banking", "payment", "trading", "blockchain", "cryptocurrency"],
+    "healthcare": ["healthcare", "medical", "health", "patient", "hospital", "clinic", "pharma", "hipaa"],
+    "ecommerce": ["ecommerce", "e-commerce", "retail", "shopping", "marketplace"],
+    "saas": ["saas", "b2b", "subscription", "cloud platform", "enterprise software"],
+    "gaming": ["gaming", "game development", "unity", "unreal", "multiplayer"],
+    "education": ["education", "edtech", "learning", "lms", "e-learning"],
+    "social": ["social media", "social network", "community", "content platform"]
+  },
+  "metrics": {
+    "percentage": ["% improvement", "% increase", "% reduction", "accuracy"],
+    "scale": ["users", "customers", "clients", "transactions", "requests"],
+    "time": ["days", "weeks", "months", "hours", "faster"],
+    "money": ["revenue", "cost savings", "budget"],
+    "quality": ["uptime", "reliability", "performance", "efficiency"]
+  },
+  "contextualWords": {
+    "technical": ["using", "with", "for", "in", "via", "through", "implementing", "leveraging", "utilizing"],
+    "impact": ["resulting in", "achieving", "leading to", "generating", "delivering"],
+    "scope": ["across", "throughout", "spanning", "covering", "encompassing"]
+  },
+  "commonAbbreviations": {
+    "api": "Application Programming Interface",
+    "ui": "User Interface",
+    "ux": "User Experience",
+    "sql": "Structured Query Language",
+    "rest": "Representational State Transfer",
+    "http": "Hypertext Transfer Protocol",
+    "https": "HTTP Secure",
+    "json": "JavaScript Object Notation",
+    "xml": "Extensible Markup Language",
+    "git": "Version Control System",
+    "ci": "Continuous Integration",
+    "cd": "Continuous Deployment",
+    "aws": "Amazon Web Services",
+    "ide": "Integrated Development Environment",
+    "cli": "Command Line Interface",
+    "sdk": "Software Development Kit",
+    "tdd": "Test Driven Development",
+    "bdd": "Behavior Driven Development",
+    "mvc": "Model View Controller",
+    "orm": "Object Relational Mapping",
+    "crud": "Create Read Update Delete",
+    "jwt": "JSON Web Token",
+    "oauth": "Open Authorization",
+    "ml": "Machine Learning",
+    "ai": "Artificial Intelligence",
+    "nlp": "Natural Language Processing",
+    "iot": "Internet of Things"
+  }
+}

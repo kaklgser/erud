@@ -1,0 +1,33 @@
+John Smith
+Data Analyst
+Email: john.smith@email.com
+Phone: (555) 123-4567
+
+PROFESSIONAL SUMMARY
+Experienced data analyst with 3 years of experience in statistical analysis and reporting. Proficient in Excel and basic SQL with strong analytical skills.
+
+WORK EXPERIENCE
+
+Data Analyst | ABC Company | 2021-2024
+• Analyzed sales data using Excel and created monthly reports
+• Worked with team to improve data quality
+• Assisted in creating dashboards for management
+• Helped with various data projects
+
+Junior Analyst | XYZ Corp | 2020-2021
+• Supported senior analysts with data collection
+• Created basic reports and presentations
+• Learned SQL and data analysis techniques
+• Participated in team meetings
+
+EDUCATION
+Bachelor of Science in Business Administration
+State University | 2020
+
+SKILLS
+• Microsoft Excel (Advanced)
+• SQL (Basic)
+• PowerPoint
+• Data Analysis
+• Communication
+• Problem Solving
