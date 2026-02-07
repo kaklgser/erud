@@ -195,7 +195,7 @@ export const Tutorials: React.FC = () => {
       <PageSidebar />
       
       {/* Main Content - with left margin for sidebar on desktop */}
-      <div className="lg:ml-16 bg-gradient-to-b from-slate-950 via-slate-930 to-slate-950">
+      <div className="md:ml-16 bg-gradient-to-b from-slate-950 via-slate-930 to-slate-950">
         {/* Hero Section */}
         <section className="relative pt-20 sm:pt-24 pb-16 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">

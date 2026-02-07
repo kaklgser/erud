@@ -1,77 +1,76 @@
-// src/App.tsx
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, Suspense, lazy } from 'react';
 import { Menu, X, Home, Info, BookOpen, Phone, FileText, LogIn, LogOut, User, Wallet, Briefcase, Crown, Sparkles, Gamepad2, Mail, Brain, Calendar, Video } from 'lucide-react';
 import { useAuth } from './contexts/AuthContext';
 import { Header } from './components/Header';
 import { Navigation } from './components/navigation/Navigation';
-import ResumeOptimizer from './components/ResumeOptimizer';
-import { HomePage } from './components/pages/HomePage';
-import GuidedResumeBuilder from './components/GuidedResumeBuilder';
-import { ResumeScoreChecker } from './components/ResumeScoreChecker';
-import { LinkedInMessageGenerator } from './components/LinkedInMessageGenerator';
-import { AboutUs } from './components/pages/AboutUs';
-import { Contact } from './components/pages/Contact';
-import { Tutorials } from './components/pages/Tutorials';
 import { AuthModal } from './components/auth/AuthModal';
-import { UserProfileManagement } from './components/UserProfileManagement';
-import { SubscriptionPlans } from './components/payment/SubscriptionPlans';
 import { paymentService } from './services/paymentService';
 import { AlertModal } from './components/AlertModal';
-import { ToolsAndPagesNavigation } from './components/pages/ToolsAndPagesNavigation';
 import { Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom';
-import { PlanSelectionModal } from './components/payment/PlanSelectionModal';
-import { PricingPage } from './components/pages/PricingPage';
 import { OfferOverlay } from './components/OfferOverlay';
-import { FloatingChatbot } from './components/common/FloatingChatbot';
-import { CareersPage } from './components/pages/CareersPage';
-import { JobDetailsPageNew as JobDetailsPage } from './components/pages/JobDetailsPageNew';
-import { JobsPage } from './components/pages/JobsPage';
-import { MyApplicationsPage } from './components/pages/MyApplicationsPage';
-import { JobApplicationPage } from './components/pages/JobApplicationPage';
-import { JobApplicationFormPage } from './components/pages/JobApplicationFormPage';
-import { AdminRoute } from './components/admin/AdminRoute';
-import { JobUploadForm } from './components/admin/JobUploadForm';
-import { AdminJobsPage } from './components/admin/AdminJobsPage';
-import { JobEditPage } from './components/admin/JobEditPage';
-import { AdminUsersPage } from './components/admin/AdminUsersPage';
-import { PortfolioBuilderPage } from './components/pages/PortfolioBuilderPage';
 import { DiwaliOfferBanner } from './components/DiwaliOfferBanner';
-import { MockInterviewPage } from './components/pages/MockInterviewPage';
-import { ResumeBasedInterviewPage } from './components/pages/ResumeBasedInterviewPage';
-import { UnifiedInterviewOrchestrator } from './components/interview/UnifiedInterviewOrchestrator';
-import { SmartInterviewPage } from './components/pages/SmartInterviewPage';
-import { BlogPage } from './components/pages/BlogPage';
-import { EnhancedBlogPage } from './components/pages/EnhancedBlogPage';
-import { BlogPostPage } from './components/pages/BlogPostPage';
-import { AdminBlogPostsList } from './components/admin/AdminBlogPostsList';
-import { AdminBlogPostForm } from './components/admin/AdminBlogPostForm';
-import { AdminBlogCategoriesManager } from './components/admin/AdminBlogCategoriesManager';
-import { EmailTestingPanel } from './components/admin/EmailTestingPanel';
-import { WebinarsPage } from './components/pages/WebinarsPage';
-import { ATSScoreChecker16ParameterComponent } from './components/ATSScoreChecker16Parameter';
-import { ATSScoreChecker16ParameterAdvanced } from './components/ATSScoreChecker16ParameterAdvanced';
-import { WebinarLandingPage } from './components/pages/WebinarLandingPage';
-import { WebinarDetailsPage } from './components/pages/WebinarDetailsPage';
-
-import { MyWebinarsPage } from './components/pages/MyWebinarsPage';
-import { GamingAptitudePage } from './components/pages/GamingAptitudePage';
-import { CompanyGamePage } from './components/pages/CompanyGamePage';
-import { AccenturePathFinderPage } from './components/pages/AccenturePathFinderPage';
-import { CognitivePathFinderPage } from './components/pages/CognitivePathFinderPage';
-import AdminPage from './pages/AdminPage';
-import { KeyFinderPage } from './components/pages/KeyFinderPage';
-import { BubbleSelectionPage } from './components/pages/BubbleSelectionPage';
-import { SpatialReasoningDemoPage } from './pages/SpatialReasoningDemoPage';
-import { ResetPasswordPage } from './components/pages/ResetPasswordPage';
 import { SnowEffect, SantaSleigh } from './components/ui/ChristmasTheme';
 import { PageSidebar } from './components/navigation/PageSidebar';
-import { TestEmailDigest } from './pages/TestEmailDigest';
-import { SessionLandingPage } from './components/session/SessionLandingPage';
-import { SessionBookingFlow } from './components/session/SessionBookingFlow';
-import { MyBookingsPage } from './components/pages/MyBookingsPage';
-import { AdminSessionSchedule } from './components/admin/AdminSessionSchedule';
-import { AdminSessionServiceEditor } from './components/admin/AdminSessionServiceEditor';
-import { AdminWebinarsPage } from './components/admin/AdminWebinarsPage';
+import { ErrorBoundary } from './components/ErrorBoundary';
+import { SuspenseFallback } from './components/SuspenseFallback';
+
+const HomePage = lazy(() => import('./components/pages/HomePage').then(m => ({ default: m.HomePage })));
+const ResumeOptimizer = lazy(() => import('./components/ResumeOptimizer'));
+const GuidedResumeBuilder = lazy(() => import('./components/GuidedResumeBuilder'));
+const ResumeScoreChecker = lazy(() => import('./components/ResumeScoreChecker').then(m => ({ default: m.ResumeScoreChecker })));
+const LinkedInMessageGenerator = lazy(() => import('./components/LinkedInMessageGenerator').then(m => ({ default: m.LinkedInMessageGenerator })));
+const AboutUs = lazy(() => import('./components/pages/AboutUs').then(m => ({ default: m.AboutUs })));
+const Contact = lazy(() => import('./components/pages/Contact').then(m => ({ default: m.Contact })));
+const Tutorials = lazy(() => import('./components/pages/Tutorials').then(m => ({ default: m.Tutorials })));
+const UserProfileManagement = lazy(() => import('./components/UserProfileManagement').then(m => ({ default: m.UserProfileManagement })));
+const SubscriptionPlans = lazy(() => import('./components/payment/SubscriptionPlans').then(m => ({ default: m.SubscriptionPlans })));
+const ToolsAndPagesNavigation = lazy(() => import('./components/pages/ToolsAndPagesNavigation').then(m => ({ default: m.ToolsAndPagesNavigation })));
+const PlanSelectionModal = lazy(() => import('./components/payment/PlanSelectionModal').then(m => ({ default: m.PlanSelectionModal })));
+const FloatingChatbot = lazy(() => import('./components/common/FloatingChatbot').then(m => ({ default: m.FloatingChatbot })));
+const CareersPage = lazy(() => import('./components/pages/CareersPage').then(m => ({ default: m.CareersPage })));
+const JobDetailsPage = lazy(() => import('./components/pages/JobDetailsPageNew').then(m => ({ default: m.JobDetailsPageNew })));
+const JobsPage = lazy(() => import('./components/pages/JobsPage').then(m => ({ default: m.JobsPage })));
+const MyApplicationsPage = lazy(() => import('./components/pages/MyApplicationsPage').then(m => ({ default: m.MyApplicationsPage })));
+const JobApplicationPage = lazy(() => import('./components/pages/JobApplicationPage').then(m => ({ default: m.JobApplicationPage })));
+const JobApplicationFormPage = lazy(() => import('./components/pages/JobApplicationFormPage').then(m => ({ default: m.JobApplicationFormPage })));
+const AdminRoute = lazy(() => import('./components/admin/AdminRoute').then(m => ({ default: m.AdminRoute })));
+const JobUploadForm = lazy(() => import('./components/admin/JobUploadForm').then(m => ({ default: m.JobUploadForm })));
+const AdminJobsPage = lazy(() => import('./components/admin/AdminJobsPage').then(m => ({ default: m.AdminJobsPage })));
+const JobEditPage = lazy(() => import('./components/admin/JobEditPage').then(m => ({ default: m.JobEditPage })));
+const AdminUsersPage = lazy(() => import('./components/admin/AdminUsersPage').then(m => ({ default: m.AdminUsersPage })));
+const PortfolioBuilderPage = lazy(() => import('./components/pages/PortfolioBuilderPage').then(m => ({ default: m.PortfolioBuilderPage })));
+const MockInterviewPage = lazy(() => import('./components/pages/MockInterviewPage').then(m => ({ default: m.MockInterviewPage })));
+const ResumeBasedInterviewPage = lazy(() => import('./components/pages/ResumeBasedInterviewPage').then(m => ({ default: m.ResumeBasedInterviewPage })));
+const UnifiedInterviewOrchestrator = lazy(() => import('./components/interview/UnifiedInterviewOrchestrator').then(m => ({ default: m.UnifiedInterviewOrchestrator })));
+const SmartInterviewPage = lazy(() => import('./components/pages/SmartInterviewPage').then(m => ({ default: m.SmartInterviewPage })));
+const EnhancedBlogPage = lazy(() => import('./components/pages/EnhancedBlogPage').then(m => ({ default: m.EnhancedBlogPage })));
+const BlogPostPage = lazy(() => import('./components/pages/BlogPostPage').then(m => ({ default: m.BlogPostPage })));
+const AdminBlogPostsList = lazy(() => import('./components/admin/AdminBlogPostsList').then(m => ({ default: m.AdminBlogPostsList })));
+const AdminBlogPostForm = lazy(() => import('./components/admin/AdminBlogPostForm').then(m => ({ default: m.AdminBlogPostForm })));
+const AdminBlogCategoriesManager = lazy(() => import('./components/admin/AdminBlogCategoriesManager').then(m => ({ default: m.AdminBlogCategoriesManager })));
+const EmailTestingPanel = lazy(() => import('./components/admin/EmailTestingPanel').then(m => ({ default: m.EmailTestingPanel })));
+const WebinarsPage = lazy(() => import('./components/pages/WebinarsPage').then(m => ({ default: m.WebinarsPage })));
+const ATSScoreChecker16ParameterComponent = lazy(() => import('./components/ATSScoreChecker16Parameter').then(m => ({ default: m.ATSScoreChecker16ParameterComponent })));
+const ATSScoreChecker16ParameterAdvanced = lazy(() => import('./components/ATSScoreChecker16ParameterAdvanced').then(m => ({ default: m.ATSScoreChecker16ParameterAdvanced })));
+const WebinarLandingPage = lazy(() => import('./components/pages/WebinarLandingPage').then(m => ({ default: m.WebinarLandingPage })));
+const WebinarDetailsPage = lazy(() => import('./components/pages/WebinarDetailsPage').then(m => ({ default: m.WebinarDetailsPage })));
+const MyWebinarsPage = lazy(() => import('./components/pages/MyWebinarsPage').then(m => ({ default: m.MyWebinarsPage })));
+const GamingAptitudePage = lazy(() => import('./components/pages/GamingAptitudePage').then(m => ({ default: m.GamingAptitudePage })));
+const CompanyGamePage = lazy(() => import('./components/pages/CompanyGamePage').then(m => ({ default: m.CompanyGamePage })));
+const AccenturePathFinderPage = lazy(() => import('./components/pages/AccenturePathFinderPage').then(m => ({ default: m.AccenturePathFinderPage })));
+const CognitivePathFinderPage = lazy(() => import('./components/pages/CognitivePathFinderPage').then(m => ({ default: m.CognitivePathFinderPage })));
+const AdminPage = lazy(() => import('./pages/AdminPage'));
+const KeyFinderPage = lazy(() => import('./components/pages/KeyFinderPage').then(m => ({ default: m.KeyFinderPage })));
+const BubbleSelectionPage = lazy(() => import('./components/pages/BubbleSelectionPage').then(m => ({ default: m.BubbleSelectionPage })));
+const SpatialReasoningDemoPage = lazy(() => import('./pages/SpatialReasoningDemoPage').then(m => ({ default: m.SpatialReasoningDemoPage })));
+const ResetPasswordPage = lazy(() => import('./components/pages/ResetPasswordPage').then(m => ({ default: m.ResetPasswordPage })));
+const TestEmailDigest = lazy(() => import('./pages/TestEmailDigest').then(m => ({ default: m.TestEmailDigest })));
+const SessionLandingPage = lazy(() => import('./components/session/SessionLandingPage').then(m => ({ default: m.SessionLandingPage })));
+const SessionBookingFlow = lazy(() => import('./components/session/SessionBookingFlow').then(m => ({ default: m.SessionBookingFlow })));
+const MyBookingsPage = lazy(() => import('./components/pages/MyBookingsPage').then(m => ({ default: m.MyBookingsPage })));
+const AdminSessionSchedule = lazy(() => import('./components/admin/AdminSessionSchedule').then(m => ({ default: m.AdminSessionSchedule })));
+const AdminSessionServiceEditor = lazy(() => import('./components/admin/AdminSessionServiceEditor').then(m => ({ default: m.AdminSessionServiceEditor })));
+const AdminWebinarsPage = lazy(() => import('./components/admin/AdminWebinarsPage').then(m => ({ default: m.AdminWebinarsPage })));
 
 function App() {
   const { isAuthenticated, user, markProfilePromptSeen, isLoading } = useAuth();
@@ -474,8 +473,10 @@ const handleDiwaliCTAClick = useCallback(() => {
         {/* Global Sidebar - visible on all pages except interview and reset password */}
         {!isInterviewMode && !isResetPasswordMode && <PageSidebar />}
 
+        <ErrorBoundary>
+        <Suspense fallback={<SuspenseFallback />}>
         <Routes>
-          <Route path="/" element={<><HomePage {...commonPageProps} /><FloatingChatbot /></>} />
+          <Route path="/" element={<><HomePage {...commonPageProps} /><Suspense fallback={null}><FloatingChatbot /></Suspense></>} />
           <Route
             path="/optimizer"
             element={
@@ -655,6 +656,8 @@ const handleDiwaliCTAClick = useCallback(() => {
             }
           />
         </Routes>
+        </Suspense>
+        </ErrorBoundary>
 
         {showMobileMenu && (
           <div className="fixed inset-0 z-50 lg:hidden">
@@ -766,25 +769,29 @@ const handleDiwaliCTAClick = useCallback(() => {
           }}
         />
 
-        <PlanSelectionModal
-          isOpen={showPlanSelectionModal}
-          onClose={() => setShowPlanSelectionModal(false)}
-          onSelectCareerPlans={handleSelectCareerPlans}
-          onSubscriptionSuccess={handleSubscriptionSuccess}
-          onShowAlert={handleShowAlert}
-          triggeredByFeatureId={planSelectionFeatureId}
-          onAddonPurchaseSuccess={handleAddonPurchaseSuccess}
-        />
+        <Suspense fallback={null}>
+          {showPlanSelectionModal && (
+            <PlanSelectionModal
+              isOpen={showPlanSelectionModal}
+              onClose={() => setShowPlanSelectionModal(false)}
+              onSelectCareerPlans={handleSelectCareerPlans}
+              onSubscriptionSuccess={handleSubscriptionSuccess}
+              onShowAlert={handleShowAlert}
+              triggeredByFeatureId={planSelectionFeatureId}
+              onAddonPurchaseSuccess={handleAddonPurchaseSuccess}
+            />
+          )}
 
-        {showSubscriptionPlans && (
-          <SubscriptionPlans
-            isOpen={showSubscriptionPlans}
-            onNavigateBack={() => setShowSubscriptionPlans(false)}
-            onSubscriptionSuccess={handleSubscriptionSuccess}
-            onShowAlert={handleShowAlert}
-            initialExpandAddons={initialExpandAddons}
-          />
-        )}
+          {showSubscriptionPlans && (
+            <SubscriptionPlans
+              isOpen={showSubscriptionPlans}
+              onNavigateBack={() => setShowSubscriptionPlans(false)}
+              onSubscriptionSuccess={handleSubscriptionSuccess}
+              onShowAlert={handleShowAlert}
+              initialExpandAddons={initialExpandAddons}
+            />
+          )}
+        </Suspense>
 
         <AlertModal
           isOpen={showAlertModal}

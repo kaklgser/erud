@@ -74,7 +74,7 @@ export const GamingAptitudePage: React.FC<GamingAptitudePageProps> = ({
     return (
       <DarkPageWrapper showSnow={isChristmas} showSanta={isChristmas}>
         <PageSidebar />
-        <div className="lg:ml-16 min-h-screen flex items-center justify-center">
+        <div className="md:ml-16 min-h-screen flex items-center justify-center">
           <div className="text-center">
             <Gamepad2 className="w-12 h-12 text-emerald-400 mx-auto mb-4 animate-pulse" />
             <p className="text-slate-400">Loading gaming section...</p>
@@ -87,7 +87,7 @@ export const GamingAptitudePage: React.FC<GamingAptitudePageProps> = ({
   return (
     <DarkPageWrapper showSnow={isChristmas} showSanta={isChristmas}>
       <PageSidebar />
-      <div className="lg:ml-16 container mx-auto px-4 py-12">
+      <div className="md:ml-16 container mx-auto px-4 py-12">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

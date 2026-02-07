@@ -140,7 +140,7 @@ export const PageSidebar: React.FC<PageSidebarProps> = () => {
       <motion.aside
         initial={{ width: 64 }}
         animate={{ width: isExpanded ? 232 : 64 }}
-        className="fixed left-0 top-14 sm:top-16 bottom-0 z-[9999] hidden md:flex flex-col bg-[#05131A] backdrop-blur-sm border-r border-[#0c1d25] transition-[width]"
+        className="fixed left-0 top-14 sm:top-16 bottom-0 z-30 hidden md:flex flex-col bg-[#05131A] backdrop-blur-sm border-r border-[#0c1d25] transition-[width]"
       >
         {/* Tools Section */}
         <div className="flex-1 overflow-y-auto px-2 pt-3">
@@ -168,7 +168,7 @@ export const PageSidebar: React.FC<PageSidebarProps> = () => {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: -8, scale: 0.95 }}
             transition={{ duration: 0.15 }}
-            className="fixed px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap z-[10001] pointer-events-none"
+            className="fixed px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap z-40 pointer-events-none"
             style={{
               top: `${tooltipPosition.top}px`,
               left: `${tooltipPosition.left}px`,
