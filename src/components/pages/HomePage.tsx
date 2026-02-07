@@ -1269,13 +1269,12 @@ export const HomePage: React.FC<HomePageProps> = ({
         </section>
 
         {/* Footer */}
-        <footer className="mt-0 bg-slate-950/90 backdrop-blur border-t border-slate-800/40">
-          <div className="h-0.5 bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500" />
-          <div className="container-responsive py-6 sm:py-8">
-            <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-4 sm:gap-6">
-              {/* Brand */}
+        <footer className="relative mt-16 sm:mt-20 bg-[#020a0f] border-t border-slate-800/50">
+          <div className="h-px bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent" />
+          <div className="container-responsive py-10 sm:py-12">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl overflow-hidden shadow ring-1 ring-white/10">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden shadow-lg ring-1 ring-white/10">
                   <img
                     src="https://res.cloudinary.com/dlkovvlud/image/upload/w_200,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1751536902/a-modern-logo-design-featuring-primoboos_XhhkS8E_Q5iOwxbAXB4CqQ_HnpCsJn4S1yrhb826jmMDw_nmycqj.jpg"
                     alt="PrimoBoost AI"
@@ -1283,38 +1282,34 @@ export const HomePage: React.FC<HomePageProps> = ({
                   />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-white">PrimoBoost AI</p>
-                  <p className="text-xs text-slate-400">Resume Intelligence</p>
+                  <p className="text-sm font-semibold text-white tracking-wide">PrimoBoost AI</p>
+                  <p className="text-xs text-slate-500">Resume Intelligence</p>
                 </div>
               </div>
 
-              {/* Copyright */}
-              <div className="text-xs sm:text-sm text-slate-400 text-center md:text-left order-3 md:order-2">
-                © {new Date().getFullYear()} PrimoBoost AI. All rights reserved.
-              </div>
-
-              {/* Socials */}
-              <div className="flex items-center gap-2 sm:gap-3 order-2 md:order-3">
+              <div className="flex items-center gap-3 order-2 md:order-3">
                 {[
-                  { href: 'https://instagram.com/primoboostai', icon: <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />, color: 'pink', label: 'Instagram' },
-                  { href: 'https://linkedin.com/company/primoboost-ai', icon: <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />, color: 'cyan', label: 'LinkedIn' },
-                  { href: 'https://wa.me/0000000000', icon: <WhatsappIcon className="w-4 h-4 sm:w-5 sm:h-5" />, color: 'emerald', label: 'WhatsApp' }
+                  { href: 'https://instagram.com/primoboostai', icon: <Instagram className="w-4 h-4" />, label: 'Instagram' },
+                  { href: 'https://linkedin.com/company/primoboost-ai', icon: <Linkedin className="w-4 h-4" />, label: 'LinkedIn' },
+                  { href: 'https://wa.me/0000000000', icon: <WhatsappIcon className="w-4 h-4" />, label: 'WhatsApp' }
                 ].map((social) => (
-                  <motion.a
+                  <a
                     key={social.label}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/10 text-${social.color}-300 bg-white/5 hover:bg-white/10 hover:ring-2 hover:ring-${social.color}-300/40 transition-all`}
+                    className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-slate-700/60 text-slate-400 bg-slate-900/50 hover:text-white hover:border-slate-600 hover:bg-slate-800/60 transition-all duration-200"
                     aria-label={social.label}
                     title={social.label}
                   >
                     {social.icon}
-                  </motion.a>
+                  </a>
                 ))}
               </div>
+
+              <p className="text-xs text-slate-500 text-center order-3 md:order-2">
+                © {new Date().getFullYear()} PrimoBoost AI. All rights reserved.
+              </p>
             </div>
           </div>
         </footer>
